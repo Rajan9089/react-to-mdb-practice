@@ -13,8 +13,8 @@ function App() {
 
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    const response = await fetch('https://node-server-practice.onrender.com',{  // http://localhost:8080/demo
+    e.preventDefault();               // // Ensure /demo endpoint is used
+    const response = await fetch('https://node-server-practice.onrender.com/demo',{  // http://localhost:8080/demo
       method:'POST', 
       body:JSON.stringify(form),
       headers:{
@@ -29,8 +29,8 @@ function App() {
   };
 
   //if we want to list all the users in react
-  const getUsers = async()=>{
-    const response = await fetch('https://node-server-practice.onrender.com',{    //  http://localhost:8080/demo
+  const getUsers = async()=>{      // // Ensure /demo endpoint is used
+    const response = await fetch('https://node-server-practice.onrender.com/demo',{    //  http://localhost:8080/demo
       method:'GET'
     })
     const data = await response.json();
@@ -41,7 +41,7 @@ function App() {
   // yha pe useEffect hook ka use karna padega
   useEffect(()=>{
     getUsers();
-  },[users])
+  },[])      //  // Empty dependency array to run only once
 
 
   return (
