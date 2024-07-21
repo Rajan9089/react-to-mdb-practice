@@ -14,7 +14,7 @@ function App() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch('http://localhost:8080/demo',{
+    const response = await fetch('https://node-server-practice.onrender.com',{  // http://localhost:8080/demo
       method:'POST', 
       body:JSON.stringify(form),
       headers:{
@@ -30,7 +30,7 @@ function App() {
 
   //if we want to list all the users in react
   const getUsers = async()=>{
-    const response = await fetch('http://localhost:8080/demo',{    //https://node-server-practice.onrender.com
+    const response = await fetch('https://node-server-practice.onrender.com',{    //  http://localhost:8080/demo
       method:'GET'
     })
     const data = await response.json();
